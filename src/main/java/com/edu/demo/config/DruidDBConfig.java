@@ -2,9 +2,6 @@ package com.edu.demo.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -15,7 +12,7 @@ import java.sql.SQLException;
  * 这里列出的这些配置项可以通过定制化DataSource来实现。
    目前Spring Boot中默认支持的连接池有dbcp,dbcp2, tomcat, hikari三种连接池。
  */
-@Configuration
+//@Configuration
 public class DruidDBConfig {
 
     @Value("${spring.datasource.url}")
@@ -72,8 +69,8 @@ public class DruidDBConfig {
     @Value("{spring.datasource.connectionProperties}")
     private String connectionProperties;
 
-    @Bean     //声明其为Bean实例
-    @Primary  //在同样的DataSource中，首先使用被标注的DataSource
+//    @Bean     //声明其为Bean实例
+//    @Primary  //在同样的DataSource中，首先使用被标注的DataSource
 //    @ConfigurationProperties("spring.druid.datasource")
     public DataSource dataSource(){
         DruidDataSource datasource = new DruidDataSource();
