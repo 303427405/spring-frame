@@ -1,7 +1,10 @@
 server:
   port: 8080
 
+
+
 spring:
+
     datasource:
         name: test
         url: jdbc:mysql://127.0.0.1:3306/boot?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
@@ -12,18 +15,39 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
         filters: stat
         maxActive: 20
+        # 初始化大小，最小，最大
         initialSize: 1
+        # 配置获取连接等待超时的时间(毫秒)
         maxWait: 60000
         minIdle: 1
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
         timeBetweenEvictionRunsMillis: 60000
+        # 配置有一个连接在连接池中的最小生存时间，单位是毫秒
         minEvictableIdleTimeMillis: 300000
         validationQuery: select 'x'
         testWhileIdle: true
         testOnBorrow: false
         testOnReturn: false
+        # 打开PSCache，指定每个连接上PSCache的大小
         poolPreparedStatements: true
         maxPoolPreparedStatementPerConnectionSize: 20
         maxOpenPreparedStatements: 20
+
+    freemarker:
+      suffix: .ftl  #后缀名
+      content-type: text/html
+      enabled: true
+      cache: false #缓存配置
+      template-loader-path: classpath:/templates/ #模板加载路径 按需配置
+      charset: UTF-8 #编码格式
+      settings:
+        number_format: '0.##'
+      allow-request-override: true
+      check-template-location: true
+      expose-request-attributes: true
+      expose-session-attributes: true
+      expose-spring-macro-helpers: true
+      request-context-attribute: req
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml
@@ -41,4 +65,5 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
+
 

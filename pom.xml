@@ -117,6 +117,12 @@
             <version>2.2.2</version>
         </dependency>
 
+        <!--freemarker依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
 	</dependencies>
 
 	<build>
@@ -124,7 +130,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+
+                <dependencies>
+                    <!-- spring热部署 -->
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.6.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 
             <!-- mybatis generator 自动生成代码插件 -->
             <plugin>
