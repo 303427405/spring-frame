@@ -30,8 +30,7 @@ public class ContextPathInterceptor implements HandlerInterceptor {
         String url="http://" + request.getServerName() //服务器地址
                 + ":"
                 + request.getServerPort();
-        System.out.print(url);
-        modelAndView.addObject("contextPath",url);
+        request.setAttribute("contextPath",url);
 
     }
 

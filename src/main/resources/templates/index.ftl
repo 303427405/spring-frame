@@ -36,31 +36,12 @@
                                 <a aria-expanded="false" role="button" href="index-2.html"> 返回首页</a>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                </ul>
+                                <a aria-expanded="false" role="button" target="_blank" href="${contextPath}/swagger-ui.html"> Swagger</a>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">M菜单列表</a>
-                                    </li>
-                                </ul>
+                                <a aria-expanded="false" role="button" target="_blank" href="${contextPath}/druid/login.html"> 数据监控</a>
                             </li>
+
                             <li class="dropdown">
                                 <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
                                 <ul role="menu" class="dropdown-menu">

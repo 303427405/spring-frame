@@ -23,12 +23,15 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     public User find(@RequestParam(value = "userId" , required = true)  Integer userId){
         return userService.selectByPrimaryKey(userId);
     }
 
 
     @ResponseBody
+    @ApiOperation(value="创建用户", notes="根据User对象创建用户")
+    @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public User addUser(@RequestBody User user){
 //        return userService.selectByPrimaryKey(userId);

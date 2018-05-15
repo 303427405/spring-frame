@@ -104,6 +104,7 @@
             <div class="wrapper wrapper-content  animated fadeInRight blog">
                 <div class="row">
 
+
                 <#list blogs as blog>
                     <div class="col-lg-12">
                         <div class="ibox">
