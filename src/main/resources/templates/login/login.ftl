@@ -2,7 +2,6 @@
 <html lang="en">
 
 
-<!-- Mirrored from www.zi-han.net/theme/hplus/login_v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:49 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -26,22 +25,18 @@
                         <!--<h1>[ H+ ]</h1>-->
                     </div>
                     <div class="m-b"></div>
-                    <strong>还没有账号？<a href="#">立即注册&raquo;</a></strong>
                 </div>
             </div>
             <div class="col-sm-5">
-                <form method="post" action="http://www.zi-han.net/theme/hplus/index.html">
-                    <h4 class="no-margins">登录：</h4>
+                <form method="post" action="/login">
                     <!--<p class="m-t-md">登录到H+后台主题UI框架</p>-->
-                    <input type="text" class="form-control uname" placeholder="用户名" />
-                    <input type="password" class="form-control pword m-b" placeholder="密码" />
-                    <a href="#">忘记密码了？</a>
-                    <button class="btn btn-success btn-block">登录</button>
+                    <input type="text" class="form-control uname" name="username" placeholder="用户名" />
+                    <input type="password" class="form-control pword m-b" name="password" placeholder="密码" />
+                    <input type="submit" class="btn btn-success btn-block" value="登陆"/>
                 </form>
             </div>
         </div>
     </div>
 </body>
 
-<!-- Mirrored from www.zi-han.net/theme/hplus/login_v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:52 GMT -->
 </html>

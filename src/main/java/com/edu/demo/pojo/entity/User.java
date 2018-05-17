@@ -1,7 +1,7 @@
 package com.edu.demo.pojo.entity;
 
 public class User {
-    private Integer userId;
+    private Long userId;
 
     private String userName;
 
@@ -9,11 +9,14 @@ public class User {
 
     private String phone;
 
-    public Integer getUserId() {
+    private String salt;//加密密码的盐
+
+
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -39,5 +42,21 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    /**
+     * 密码盐.
+     * @return
+     */
+    public String getCredentialsSalt(){
+        return this.userName+this.salt;
     }
 }
