@@ -1,15 +1,19 @@
 package com.edu.demo.controller;
 
 import com.edu.demo.service.dictionary.DictionaryService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.RequestContext;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 
@@ -17,20 +21,20 @@ import java.util.Map;
  * Created By zhangyufei on 2018/5/9
  */
 @Controller
-@RequestMapping(value = "")
+@RequestMapping(value = "/")
 public class LoginController {
 
     @Autowired
     private DictionaryService dictionaryService;
 
-    @RequestMapping(value = "/index")
+    @RequestMapping(value = "home")
     public String index(ModelMap modelMap){
         modelMap.addAttribute("dictionarys" , dictionaryService.selectList());
         return "/index";
     }
 
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "login")
     public String login(HttpServletRequest request, Map<String, Object> map){
         System.out.println("HomeController.login()");
         // 登录失败从request中获取shiro处理的异常信息。
@@ -55,6 +59,21 @@ public class LoginController {
         }
         map.put("msg", msg);
         // 此方法不处理登录成功,由shiro进行处理
+        //获取当前的Subject
+        Subject currentUser = SecurityUtils.getSubject();
+        if (currentUser.isAuthenticated()) {
+            return "redirect:/home";
+        }
+        currentUser.logout();
+        return "/login/login";
+    }
+
+
+    @GetMapping("/logout")
+    public String logout(RedirectAttributes redirectAttributes) {
+        //使用权限管理工具进行用户的退出，跳出登录，给出提示信息
+        SecurityUtils.getSubject().logout();
+        redirectAttributes.addFlashAttribute("message", "您已安全退出");
         return "/login/login";
     }
 

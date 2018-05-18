@@ -72,7 +72,7 @@
                         </ul>
                         <ul class="nav navbar-top-links navbar-right">
                             <li>
-                                <a href="login.html">
+                                <a href="${contextPath}/logout">
                                     <i class="fa fa-sign-out"></i> 退出
                                 </a>
                             </li>
