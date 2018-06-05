@@ -31,4 +31,9 @@ public class BlogServiceImpl implements BlogService{
     public BlogDetail selectByPrimaryKey(Long id) {
         return blogDetailMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public int insertSelective(Blog record) {
+        return blogMapper.insertSelective(record);
+    }
 }

@@ -7,8 +7,8 @@
     <result column="blog_id" property="blogId" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="VARCHAR" />
   </resultMap>
 
   <resultMap id="ResultMapWithBLOBs" type="com.edu.demo.pojo.entity.BlogDetail" extends="BaseResultMap" >
@@ -33,9 +33,6 @@
   <insert id="insertSelective" parameterType="com.edu.demo.pojo.entity.BlogDetail" >
     insert into t_blog_detail
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
       <if test="dicId != null" >
         dic_id,
       </if>
@@ -59,9 +56,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="dicId != null" >
         #{dicId,jdbcType=BIGINT},
       </if>

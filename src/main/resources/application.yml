@@ -1,5 +1,9 @@
 server:
-  port: 8080
+  port: 9527
+  max-http-header-size: 65536
+  tomcat:
+    max-http-post-size: 41943046
+
 
 
 

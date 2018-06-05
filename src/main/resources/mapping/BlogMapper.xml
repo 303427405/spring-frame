@@ -8,8 +8,8 @@
     <result column="description" property="description" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="TINYINT" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, dic_id, name, description, remark, status, create_time, update_time
@@ -28,12 +28,9 @@
         where dic_id = #{dicId,jdbcType=BIGINT}
     </select>
 
-  <insert id="insertSelective" parameterType="com.edu.demo.pojo.entity.Blog" >
+  <insert id="insertSelective" parameterType="com.edu.demo.pojo.entity.Blog" useGeneratedKeys="true" keyProperty="id" >
     insert into t_blog
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
       <if test="dicId != null" >
         dic_id,
       </if>
@@ -57,9 +54,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="dicId != null" >
         #{dicId,jdbcType=BIGINT},
       </if>

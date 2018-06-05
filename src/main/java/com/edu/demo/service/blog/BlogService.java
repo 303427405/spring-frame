@@ -14,4 +14,6 @@ public interface BlogService {
 
     BlogDetail selectByPrimaryKey(Long id);
 
+    int insertSelective(Blog record);
+
 }

@@ -32,58 +32,21 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a aria-expanded="false" role="button" href="index-2.html"> 返回首页</a>
+                            <li class="dropdown">
+                                <a aria-expanded="false" role="button" href="${contextPath}/home"> 返回首页</a>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                </ul>
+                                <a aria-expanded="false" role="button" target="_blank" href="${contextPath}/swagger-ui.html"> Swagger</a>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">M菜单列表</a>
-                                    </li>
-                                </ul>
+                                <a aria-expanded="false" role="button" target="_blank" href="${contextPath}/druid/login.html"> 数据监控</a>
                             </li>
+
                             <li class="dropdown">
-                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
+                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 日志记录 <span class="caret"></span></a>
                                 <ul role="menu" class="dropdown-menu">
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
-                                    </li>
-                                    <li><a href="#">菜单列表</a>
+                                    <li>
+                                        <a href="${contextPath}/blog/toadd"> 日志录入</a>
                                     </li>
                                 </ul>
                             </li>
@@ -109,7 +72,7 @@
                     <div class="col-lg-12">
                         <div class="ibox">
                             <div class="ibox-content">
-                                <a href="${contextPath}/blog/detail?id=${blog.id!}" class="btn-link">
+                                <a href="${contextPath}/blog/todetail?id=${blog.id!}" class="btn-link">
                                     <h2>
                                         ${blog.name!}
                                     </h2>
