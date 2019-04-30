@@ -51,7 +51,7 @@ spring:
       expose-request-attributes: true
       expose-session-attributes: true
       expose-spring-macro-helpers: true
-      request-context-attribute: req
+      request-context-attribute: request
 
       redis:
         database: 0
