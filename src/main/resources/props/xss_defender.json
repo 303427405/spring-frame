@@ -1,0 +1,56 @@
+{
+  "globalDefenderRule": {
+    "type": "ESCAPE",
+    "enable": true
+  },
+  "urlDefenderRule": {
+    "/wxconfig/**/put": {
+      "type": "ESCAPE",
+      "enable": true,
+      "params": {
+        "shareTitle": {
+          "type": "CLEAR"
+        },
+        "shareDescription": {
+          "type": "CLEAR"
+        }
+      }
+    },
+    "/admin/api/coupon/receive/save/base": {
+      "type": "ESCAPE",
+      "enable": true,
+      "params": {
+        "description": {
+          "type": "CLEAR"
+        }
+      }
+    },
+    "/static/**": {
+      "enable": false
+    },
+    "/business_info/**": {
+      "enable": false
+    },
+    "/admin/api/assemble/edit": {
+      "enable": false
+    },
+    "/admin/api/wheelreward/smsnotice": {
+      "enable": false
+    },
+    "/m/wx/share/configure": {
+      "enable": false
+    },
+    "/api/v2/weixin/share/configure": {
+      "enable": false
+    },
+    "/admin/api/h5app/ornament/save": {
+      "type": "ESCAPE",
+      "enable": true,
+      "params": {
+        "ornament": {
+          "type": "CLEAR"
+        }
+      }
+    }
+  }
+}
